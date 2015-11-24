@@ -7,10 +7,11 @@ module NgrokRails
       require 'socket'
       ENV['NGROK_SUBDOMAIN'] ||= subdomain || "#{ENV['USER']}.#{Socket.gethostname}"
       ENV['NGROK_PORT'] = port.to_s
+      puts options.to_json
       puts "Starting ngrok: http://#{ENV['NGROK_SUBDOMAIN']}.ngrok.com"
       require 'spawnling'
       Spawnling.new(:kill => true) do
-        exec("sleep 5;/usr/local/bin/ngrok http -authtoken=1QP44fp2ytyEx1p57SEq_2D8rXBnYgKkNnk53JRhDW -subdomain=ad-wire 3000 > /dev/null;")
+        exec("./ngrok http -authtoken="1QP44fp2ytyEx1p57SEq_2D8rXBnYgKkNnk53JRhDW" -subdomain=ad-wire 3000 > /dev/null;")
       end
     end
 
