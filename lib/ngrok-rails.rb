@@ -10,7 +10,7 @@ module NgrokRails
       puts "Starting ngrok: http://#{ENV['NGROK_SUBDOMAIN']}.ngrok.com"
       require 'spawnling'
       Spawnling.new(:kill => true) do
-        exec("ngrok -log=stdout -subdomain=#{ENV['NGROK_SUBDOMAIN']} #{ENV['NGROK_PORT']} > /dev/null;")
+        exec("/usr/local/bin/ngrok -log=stdout -subdomain=#{ENV['NGROK_SUBDOMAIN']} #{ENV['NGROK_PORT']} > /dev/null;")
       end
     end
 
