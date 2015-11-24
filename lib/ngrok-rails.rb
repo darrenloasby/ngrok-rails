@@ -11,7 +11,7 @@ module NgrokRails
       puts "Starting ngrok: http://#{ENV['NGROK_SUBDOMAIN']}.ngrok.com"
       require 'spawnling'
       Spawnling.new(:kill => true) do
-        exec("./ngrok http -authtoken="1QP44fp2ytyEx1p57SEq_2D8rXBnYgKkNnk53JRhDW" -subdomain=ad-wire 3000 > /dev/null;")
+        exec("./ngrok http -authtoken='1QP44fp2ytyEx1p57SEq_2D8rXBnYgKkNnk53JRhDW' -subdomain='ad-wire' 3000 > /dev/null;")
       end
     end
 
