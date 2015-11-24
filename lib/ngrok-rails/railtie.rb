@@ -5,7 +5,7 @@ module NgrokRails
       unless defined?(Rails::Console)
         app.config.middleware.use 'NgrokRails::Middleware',
                                   port: Rails::Server.new.options[:Port],
-                                  subdomain: "#{ENV['USER']}.#{Rails.application.class.parent_name.underscore.dasherize}"
+                                  subdomain: "ad-wire"
       end
     end
   end
